@@ -20,3 +20,21 @@ jobs:
 
       - name: Build Apk
         run: flutter build apk --release
+
+      - name: UPLOAD BUILD
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-uat.apk
+
+
+downloads:
+  name: DOWNLOAD APK
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: DOWNLOAD APK
+      uses: actions/download-artifact@v2
+      with:
+        name: app-uat
+        path: ${{github.workspace}}/app-uat.apk
