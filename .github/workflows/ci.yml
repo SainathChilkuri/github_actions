@@ -37,5 +37,5 @@ jobs:
       - name: DOWNLOAD APK
         uses: actions/download-artifact@v2
         with:
-          name: app-uat
+          name: app-release
           path: ${{github.workspace}}/app-release.apk
