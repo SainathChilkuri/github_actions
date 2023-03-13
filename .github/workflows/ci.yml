@@ -30,6 +30,7 @@ jobs:
 
   download:
     name: DOWNLOAD APK
+    needs: test_app
     runs-on: ubuntu-latest
 
     steps:
