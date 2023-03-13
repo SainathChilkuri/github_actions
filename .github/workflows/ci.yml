@@ -1,0 +1,20 @@
+name: build_apk
+on:
+  push:
+    branch:
+      origin/test_branch
+
+jobs:
+  test_app:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.0.5'
+      - name: INSTALL DEPENDENCIES
+        run: flutter pub get
+
+      - name: Build Apk
+        run: flutter build apk --release
