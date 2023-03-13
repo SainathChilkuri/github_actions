@@ -28,13 +28,13 @@ jobs:
           path: build/app/outputs/flutter-apk/app-uat.apk
 
 
-download:
-  name: DOWNLOAD APK
-  runs-on: ubuntu-latest
+  download:
+    name: DOWNLOAD APK
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: DOWNLOAD APK
-      uses: actions/download-artifact@v2
-      with:
-        name: app-uat
-        path: ${{github.workspace}}/app-uat.apk
+    steps:
+      - name: DOWNLOAD APK
+        uses: actions/download-artifact@v2
+        with:
+          name: app-uat
+          path: ${{github.workspace}}/app-uat.apk
