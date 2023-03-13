@@ -28,7 +28,7 @@ jobs:
           path: build/app/outputs/flutter-apk/app-uat.apk
 
 
-downloads:
+download:
   name: DOWNLOAD APK
   runs-on: ubuntu-latest
 
