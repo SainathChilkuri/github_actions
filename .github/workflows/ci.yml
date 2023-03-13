@@ -1,17 +1,19 @@
 name: build_apk
 on:
   push:
-    branch:
+    branches:
       origin/test_branch
 
 jobs:
   test_app:
+    name: Flutter CI setup
     runs_on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: setup flutter
         uses: subosito/flutter-action@v1
         with:
+          channel: 'stable'
           flutter-version: '3.0.5'
       - name: INSTALL DEPENDENCIES
         run: flutter pub get
